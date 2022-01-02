@@ -1,0 +1,8 @@
+displayName: "Ore Plus Mod"
+name: "opm"
+author: "ItsTheSky#1234"
+main: "info.itsthesky.opm.OrePlusMod"
+description: "Simple mod that add some new basics ores and machine to work with in Mindustry."
+version: 1.0
+minGameVersion: 120
+java: true
