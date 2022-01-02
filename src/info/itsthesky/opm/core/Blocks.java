@@ -1,17 +1,13 @@
 package info.itsthesky.opm.core;
 
-import mindustry.content.Liquids;
 import mindustry.ctype.ContentList;
 import mindustry.type.Category;
 import mindustry.type.ItemStack;
-import mindustry.type.LiquidStack;
 import mindustry.world.Block;
 import mindustry.world.blocks.defense.Wall;
 import mindustry.world.blocks.distribution.Conveyor;
 import mindustry.world.blocks.environment.OreBlock;
 import mindustry.world.blocks.production.GenericCrafter;
-import mindustry.world.draw.DrawLiquid;
-import mindustry.world.meta.BuildVisibility;
 
 import static mindustry.type.ItemStack.with;
 
@@ -19,9 +15,9 @@ public class Blocks implements ContentList {
 
     public static Block
 
-    ironOre, ionOre, arcaneConveyor,
-    arcaneCreator, arcaneCompressor,
-    arcaneWall, arcaneWallLarge, arcaneWallHuge, arcaneWallGigantic
+            ironOre, ionOre, arcaneConveyor,
+            ironCondenser, arcaneCreator, arcaneCompressor,
+            arcaneWall, arcaneWallLarge, arcaneWallHuge, arcaneWallGigantic
 
     ;
 
@@ -50,6 +46,21 @@ public class Blocks implements ContentList {
             speed = 0.11f;
             displayedSpeed = 10f;
             buildCostMultiplier = 2f;
+        }};
+
+        ironCondenser = new GenericCrafter("iron-condenser") {{
+            requirements(Category.crafting, with(mindustry.content.Items.copper, 80, mindustry.content.Items.silicon, 60, mindustry.content.Items.lead, 150));
+            health = 600;
+            craftTime = 30;
+            hasPower = false;
+            size = 2;
+            outputItem = new ItemStack(Items.iron, 2);
+
+            description = "Convert copper, lead and coal into OPM iron to use with magical items.";
+
+            consumes.items(new ItemStack(mindustry.content.Items.copper, 1),
+                    new ItemStack(mindustry.content.Items.lead, 1),
+                    new ItemStack(mindustry.content.Items.coal, 3));
         }};
 
         arcaneCompressor = new GenericCrafter("arcane-compressor"){{
