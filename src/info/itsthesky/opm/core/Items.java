@@ -21,6 +21,13 @@ public class Items implements ContentList {
             color = Color.gray;
         }};
 
+        compressedArcane = new Item("compressed-arcane") {{
+            description = "Compressed and secured Arcane material.";
+            color = Color.cyan;
+            alwaysUnlocked = true;
+            hardness = 2;
+        }};
+
         ion = new Item("ion"){{
             description = "Raw magical item, can be converted into arcane.";
             explosiveness = 0.2f;

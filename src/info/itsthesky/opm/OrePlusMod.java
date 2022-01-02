@@ -9,7 +9,7 @@ import info.itsthesky.opm.core.Items;
 import info.itsthesky.opm.core.Planets;
 import info.itsthesky.opm.core.SectorPresets;
 import mindustry.ctype.ContentList;
-import mindustry.game.EventType.ClientLoadEvent;
+import mindustry.game.EventType.*;
 import mindustry.mod.Mod;
 import mindustry.ui.dialogs.BaseDialog;
 

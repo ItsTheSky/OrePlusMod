@@ -6,10 +6,12 @@ import mindustry.type.Category;
 import mindustry.type.ItemStack;
 import mindustry.type.LiquidStack;
 import mindustry.world.Block;
+import mindustry.world.blocks.defense.Wall;
 import mindustry.world.blocks.distribution.Conveyor;
 import mindustry.world.blocks.environment.OreBlock;
 import mindustry.world.blocks.production.GenericCrafter;
 import mindustry.world.draw.DrawLiquid;
+import mindustry.world.meta.BuildVisibility;
 
 import static mindustry.type.ItemStack.with;
 
@@ -18,8 +20,8 @@ public class Blocks implements ContentList {
     public static Block
 
     ironOre, ionOre, arcaneConveyor,
-
-    arcaneCreator, arcaneCompressor
+    arcaneCreator, arcaneCompressor,
+    arcaneWall, arcaneWallLarge, arcaneWallHuge, arcaneWallGigantic
 
     ;
 
@@ -76,6 +78,29 @@ public class Blocks implements ContentList {
 
             consumes.power(4f);
             consumes.items(new ItemStack(Items.ion, 2), new ItemStack(Items.iron, 1));
+        }};
+
+        arcaneWall = new Wall("arcane-wall"){{
+            requirements(Category.defense, with(Items.arcane, 6));
+            health = 60 * 6;
+        }};
+
+        arcaneWallLarge = new Wall("arcane-wall-large"){{
+            requirements(Category.defense, with(Items.arcane, 24));
+            health = 60 * 4 * 6;
+            size = 2;
+        }};
+
+        arcaneWallHuge = new Wall("arcane-wall-huge"){{
+            requirements(Category.defense, with(Items.arcane, 300));
+            health = 60 * 9 * 6;
+            size = 3;
+        }};
+
+        arcaneWallGigantic = new Wall("arcane-wall-gigantic"){{
+            requirements(Category.defense, with(Items.arcane, 500));
+            health = 60 * 16 * 6;
+            size = 4;
         }};
     }
 }
