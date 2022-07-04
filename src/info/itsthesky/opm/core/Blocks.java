@@ -3,6 +3,7 @@ package info.itsthesky.opm.core;
 import mindustry.ctype.ContentList;
 import mindustry.type.Category;
 import mindustry.type.ItemStack;
+import mindustry.type.LiquidStack;
 import mindustry.world.Block;
 import mindustry.world.blocks.defense.Wall;
 import mindustry.world.blocks.distribution.Conveyor;
@@ -16,6 +17,7 @@ public class Blocks implements ContentList {
     public static Block
 
             ironOre, ionOre, arcaneConveyor,
+            waterGenerator,
             ironCondenser, arcaneCreator, arcaneCompressor,
             arcaneWall, arcaneWallLarge, arcaneWallHuge, arcaneWallGigantic
 
@@ -61,6 +63,16 @@ public class Blocks implements ContentList {
             consumes.items(new ItemStack(mindustry.content.Items.copper, 1),
                     new ItemStack(mindustry.content.Items.lead, 1),
                     new ItemStack(mindustry.content.Items.coal, 3));
+        }};
+        
+        waterGenerator = new GenericCrafter("water-generator") {{
+            requirements(Category.crafting, with(mindustry.content.Items.copper, 80, mindustry.content.Items.silicon, 60, mindustry.content.Items.lead, 150));
+            health = 600;
+            craftTime = 30;
+            hasPower = false;
+            size = 2;
+            outputLiquid = new LiquidStack(mindustry.content.Liquids.water, 40);
+            consumes.items(new ItemStack(mindustry.content.Items.copper, 1));
         }};
 
         arcaneCompressor = new GenericCrafter("arcane-compressor"){{
