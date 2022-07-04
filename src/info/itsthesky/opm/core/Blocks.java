@@ -71,6 +71,7 @@ public class Blocks implements ContentList {
             craftTime = 30;
             hasPower = false;
             size = 2;
+            hasLiquids = true;
             alwaysUnlocked = true;
             outputLiquid = new LiquidStack(mindustry.content.Liquids.water, 40);
             consumes.items(new ItemStack(mindustry.content.Items.copper, 1));
