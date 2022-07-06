@@ -93,7 +93,7 @@ public class Blocks implements ContentList {
 
             description = "Compress magical arcane into plate, to use in deeper and more advanced engines.";
 
-            consumes.power(2.5f);
+            consumes.power(0.4f);
             consumes.items(new ItemStack(Items.iron, 1), new ItemStack(Items.arcane, 2));
         }};
 
@@ -118,7 +118,7 @@ public class Blocks implements ContentList {
             alwaysUnlocked = true;
             description = "The main engine to create arcane from iron and ions. It require a lot of energy, but produce arcane faster.";
 
-            consumes.power(4f);
+            consumes.power(0.4f);
             consumes.items(new ItemStack(Items.ion, 2), new ItemStack(Items.iron, 1));
         }};
 
