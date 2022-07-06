@@ -45,7 +45,7 @@ public class Blocks implements ContentList {
             requirements(Category.distribution, with(
                             Items.iron, 2, Items.arcane, 1), true);
             health = 250;
-            speed = 0.11f;
+            speed = 0.4f;
             displayedSpeed = 10f;
             buildCostMultiplier = 2f;
         }};
