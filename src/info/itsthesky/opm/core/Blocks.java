@@ -17,7 +17,7 @@ public class Blocks implements ContentList {
     public static Block
 
             ironOre, ionOre, arcaneConveyor,
-            waterGenerator,
+            waterGenerator, sandGenerator,
             ironCondenser, arcaneCreator, arcaneCompressor,
             arcaneWall, arcaneWallLarge, arcaneWallHuge, arcaneWallGigantic
 
@@ -56,6 +56,7 @@ public class Blocks implements ContentList {
             craftTime = 30;
             hasPower = false;
             size = 2;
+            alwaysUnlocked = true;
             outputItem = new ItemStack(Items.iron, 2);
 
             description = "Convert copper, lead and coal into OPM iron to use with magical items.";
@@ -77,18 +78,34 @@ public class Blocks implements ContentList {
             consumes.items(new ItemStack(mindustry.content.Items.copper, 1));
         }};
 
+
+
+
+
         arcaneCompressor = new GenericCrafter("arcane-compressor"){{
             requirements(Category.crafting, with(Items.arcane, 180, mindustry.content.Items.thorium, 10, Items.iron, 150));
             health = 600;
             craftTime = 45;
             hasPower = true;
             size = 3;
+            alwaysUnlocked = true;
             outputItem = new ItemStack(Items.compressedArcane, 1);
 
             description = "Compress magical arcane into plate, to use in deeper and more advanced engines.";
 
             consumes.power(2.5f);
             consumes.items(new ItemStack(Items.iron, 1), new ItemStack(Items.arcane, 2));
+        }};
+
+        sandGenerator = new GenericCrafter("sand-generator") {{
+            requirements(Category.crafting, with(mindustry.content.Items.copper, 80, mindustry.content.Items.lead, 150));
+            health = 600;
+            craftTime = 20;
+            hasPower = false;
+            size = 2;
+            alwaysUnlocked = true;
+            outputItem = new ItemStack(mindustry.content.Items.sand, 2);
+            consumes.items(new ItemStack(mindustry.content.Items.copper, 3));
         }};
 
         arcaneCreator = new GenericCrafter("arcane-creator"){{
@@ -98,7 +115,7 @@ public class Blocks implements ContentList {
             hasPower = true;
             size = 2;
             outputItem = new ItemStack(Items.arcane, 1);
-
+            alwaysUnlocked = true;
             description = "The main engine to create arcane from iron and ions. It require a lot of energy, but produce arcane faster.";
 
             consumes.power(4f);
@@ -108,24 +125,28 @@ public class Blocks implements ContentList {
         arcaneWall = new Wall("arcane-wall"){{
             requirements(Category.defense, with(Items.arcane, 6));
             health = 60 * 6;
+            alwaysUnlocked = true;
         }};
 
         arcaneWallLarge = new Wall("arcane-wall-large"){{
             requirements(Category.defense, with(Items.arcane, 24));
             health = 60 * 4 * 6;
             size = 2;
+            alwaysUnlocked = true;
         }};
 
         arcaneWallHuge = new Wall("arcane-wall-huge"){{
             requirements(Category.defense, with(Items.arcane, 300));
             health = 60 * 9 * 6;
             size = 3;
+            alwaysUnlocked = true;
         }};
 
         arcaneWallGigantic = new Wall("arcane-wall-gigantic"){{
             requirements(Category.defense, with(Items.arcane, 500));
             health = 60 * 16 * 6;
             size = 4;
+            alwaysUnlocked = true;
         }};
     }
 }
