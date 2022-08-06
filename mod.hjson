@@ -4,5 +4,5 @@ author: "ItsTheSky#1234"
 main: "info.itsthesky.opm.OrePlusMod"
 description: "Simple mod that add some new basics ores and machine to work with in Mindustry."
 version: 1.0
-minGameVersion: 120
+minGameVersion: 136
 java: true
